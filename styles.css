@@ -1,0 +1,1238 @@
+/* Texture elements */
+.texture-element {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+}/* Reset de links para evitar cor azul padrão */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.btn:focus,
+.btn:active,
+.form-control:focus,
+.form-control:active {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(183, 93, 79, 0.25);
+}
+
+/* Correção para botões e links */
+.btn-primary:hover, 
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white;
+}
+
+.social-link:hover,
+.social-link:focus,
+.social-link:active {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* FIXAÇÃO ESPECÍFICA PARA O BOTÃO "VER PRODUTOS" */
+.hero .btn-primary,
+.hero .btn-primary:hover,
+.hero .btn-primary:focus,
+.hero .btn-primary:active,
+.hero .btn-primary:visited {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.hero .btn-primary:hover,
+.hero .btn-primary:focus,
+.hero .btn-primary:active {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* Garantia adicional para todos os botões primários */
+.btn-primary:visited,
+a.btn-primary:visited {
+  color: white !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+/* Remover qualquer estilo específico que o Bootstrap possa estar aplicando */
+.btn:not(:disabled):not(.disabled):active,
+.btn:not(:disabled):not(.disabled).active {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+  color: white !important;
+}
+
+/* Desabilitar o outline do Bootstrap nos botões */
+.btn:focus, 
+.btn.focus, 
+.btn:active:focus, 
+.btn:active.focus, 
+.btn.active:focus, 
+.btn.active.focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Restaurar o efeito de textura no botão */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23FFFFFF" fill-opacity="0.05" /><path d="M0,0 L100,100 M0,20 L80,100 M20,0 L100,80 M0,40 L60,100 M40,0 L100,60 M0,60 L40,100 M60,0 L100,40 M0,80 L20,100 M80,0 L100,20" stroke="%23FFFFFF" stroke-width="0.5" stroke-opacity="0.1" /></svg>');
+  background-size: 7px 7px;
+  opacity: 0.5;
+}
+:root {
+  --primary: #B75D4F;
+  --primary-dark: #9d4e41;
+  --primary-light: #e5a99e;
+  --secondary: #A7B5A0;
+  --secondary-dark: #869483;
+  --text-dark: #4A3F35;
+  --text-light: #6c6359;
+  --bg-cream: #FFFDF9;
+  --bg-light: #F6F1EC;
+  --accent-gold: #C1A875;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--bg-cream);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-dark);
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.btn {
+  border-radius: 8px;
+  padding: 0.8rem 1.8rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+/* Correções para elementos com hover azul */
+.btn-primary, 
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white;
+  box-shadow: 0 5px 15px rgba(183, 93, 79, 0.3);
+}
+
+.btn-outline-secondary {
+  border-color: var(--text-light);
+  color: var(--text-light);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active {
+  background-color: var(--text-light);
+  border-color: var(--text-light);
+  color: white;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.divider {
+  height: 2px;
+  width: 60px;
+  background-color: var(--primary);
+  margin: 2rem 0;
+}
+
+/* ====================
+   NAVBAR
+==================== */
+.navbar {
+  background-color: rgba(255, 253, 249, 0.95);
+  padding: 1rem 0;
+  transition: var(--transition);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar.scrolled {
+  padding: 0.5rem 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 500;
+  padding: 0;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:active {
+  color: var(--primary-dark);
+}
+
+.logo-img {
+  max-height: 50px;
+  transition: var(--transition);
+}
+
+.navbar.scrolled .logo-img {
+  max-height: 40px;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 0 0.5rem;
+  padding: 0.5rem 0.8rem;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ====================
+   HERO SECTION
+==================== */
+.hero {
+  padding: 7rem 0 4rem;
+  background-color: var(--bg-light);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(183, 93, 79, 0.1);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('fluffy.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  filter: brightness(1.1) contrast(0.9);
+  z-index: 0;
+}
+
+/* Cotton particles animation */
+.cotton-particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cotton-particle {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23FFFFFF" fill-opacity="0.85" /><circle cx="45" cy="45" r="35" fill="%23FFFFFF" fill-opacity="0.9" /><circle cx="40" cy="40" r="25" fill="%23FFFFFF" /></svg>');
+  background-size: contain;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: floatCotton 20s linear infinite;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.05));
+}
+
+.cotton-particle:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  width: 25px;
+  height: 25px;
+  animation-duration: 30s;
+  animation-delay: 2s;
+}
+
+.cotton-particle:nth-child(2) {
+  top: 20%;
+  left: 80%;
+  width: 20px;
+  height: 20px;
+  animation-duration: 25s;
+}
+
+.cotton-particle:nth-child(3) {
+  top: 70%;
+  left: 30%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 28s;
+  animation-delay: 5s;
+}
+
+.cotton-particle:nth-child(4) {
+  top: 40%;
+  left: 70%;
+  width: 15px;
+  height: 15px;
+  animation-duration: 32s;
+  animation-delay: 8s;
+}
+
+.cotton-particle:nth-child(5) {
+  top: 80%;
+  left: 15%;
+  width: 22px;
+  height: 22px;
+  animation-duration: 29s;
+  animation-delay: 4s;
+}
+
+.cotton-particle:nth-child(6) {
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  animation-duration: 26s;
+  animation-delay: 10s;
+}
+
+.cotton-particle:nth-child(7) {
+  top: 30%;
+  left: 25%;
+  width: 28px;
+  height: 28px;
+  animation-duration: 34s;
+  animation-delay: 3s;
+}
+
+.cotton-particle:nth-child(8) {
+  top: 60%;
+  left: 85%;
+  width: 22px;
+  height: 22px;
+  animation-duration: 27s;
+  animation-delay: 7s;
+}
+
+.cotton-particle:nth-child(9) {
+  top: 75%;
+  left: 60%;
+  width: 16px;
+  height: 16px;
+  animation-duration: 31s;
+  animation-delay: 1s;
+}
+
+.cotton-particle:nth-child(10) {
+  top: 15%;
+  left: 45%;
+  width: 24px;
+  height: 24px;
+  animation-duration: 33s;
+  animation-delay: 6s;
+}
+
+.cotton-particle:nth-child(11) {
+  top: 55%;
+  left: 5%;
+  width: 19px;
+  height: 19px;
+  animation-duration: 28s;
+  animation-delay: 9s;
+}
+
+.cotton-particle:nth-child(12) {
+  top: 25%;
+  left: 65%;
+  width: 21px;
+  height: 21px;
+  animation-duration: 30s;
+  animation-delay: 5s;
+}
+
+/* Cotton threads */
+.cotton-thread {
+  position: absolute;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: threadFloat 15s ease-in-out infinite;
+  z-index: 1;
+  transform-origin: center;
+}
+
+.thread-1 {
+  top: 35%;
+  left: 10%;
+  width: 150px;
+  transform: rotate(30deg);
+  animation-delay: 2s;
+}
+
+.thread-2 {
+  top: 65%;
+  right: 15%;
+  width: 120px;
+  transform: rotate(-20deg);
+  animation-delay: 5s;
+}
+
+.thread-3 {
+  top: 20%;
+  right: 30%;
+  width: 180px;
+  transform: rotate(15deg);
+  animation-delay: 8s;
+}
+
+/* Crochet patterns */
+.crochet-pattern {
+  position: absolute;
+  opacity: 0.2;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
+.pattern-1 {
+  top: 10%;
+  right: 10%;
+  width: 200px;
+  height: 200px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M50,50 Q75,25 100,50 Q125,75 150,50 Q175,25 200,50 M0,100 Q25,75 50,100 Q75,125 100,100 Q125,75 150,100 Q175,125 200,100 M50,150 Q75,125 100,150 Q125,175 150,150 Q175,125 200,150" stroke="%23B75D4F" stroke-width="1" fill="none" /></svg>');
+  animation: rotateSlow 60s linear infinite;
+}
+
+.pattern-2 {
+  bottom: 5%;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="50" stroke="%23A7B5A0" stroke-width="1" fill="none" /><circle cx="100" cy="100" r="70" stroke="%23A7B5A0" stroke-width="1" fill="none" stroke-dasharray="5,5" /><circle cx="100" cy="100" r="90" stroke="%23A7B5A0" stroke-width="1" fill="none" /></svg>');
+  animation: pulseScale 20s ease-in-out infinite;
+}
+
+@keyframes floatCotton {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+    transform: translate(10px, 10px) rotate(20deg);
+  }
+  25% {
+    transform: translate(-10px, 30px) rotate(40deg);
+  }
+  50% {
+    transform: translate(10px, 60px) rotate(90deg);
+  }
+  75% {
+    transform: translate(-10px, 90px) rotate(180deg);
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(0, 120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes threadFloat {
+  0% {
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+  50% {
+    transform: translateY(15px) rotate(var(--rotation, 0deg));
+  }
+  100% {
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+}
+
+@keyframes rotateSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.hero h1::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.hero .subtitle {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-image-container {
+  position: relative;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.hero-image-container::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  right: -1rem;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.hero-image-container img {
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-badge {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 15px rgba(183, 93, 79, 0.3);
+  z-index: 2;
+  transform: rotate(5deg);
+}
+
+/* ====================
+   FEATURE SECTION
+==================== */
+.feature-section {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,50 Q50,20 70,50 Q90,80 50,85 Q10,80 30,50" fill="none" stroke="%23B75D4F" stroke-width="2" stroke-opacity="0.2" /></svg>');
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.image-container {
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+}
+
+.image-container img {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.image-container:hover img {
+  transform: scale(1.02);
+}
+
+.image-container::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 80px;
+  height: 80px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,30 Q40,10 60,30 Q80,50 60,70 Q40,90 30,70 Q10,50 30,30" fill="none" stroke="%23A7B5A0" stroke-width="3" /></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.floating-badge {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 15px rgba(183, 93, 79, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-item i {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+/* ====================
+   HISTORY SECTION
+==================== */
+.history-section {
+  background-color: var(--bg-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.history-section::before,
+.history-section::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 C20,30 40,20 50,40 C60,20 80,30 80,50 C80,70 60,80 50,60 C40,80 20,70 20,50 Z" fill="none" stroke="%23F6F1EC" stroke-width="3" /></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.history-section::before {
+  top: -150px;
+  left: -150px;
+}
+
+.history-section::after {
+  bottom: -150px;
+  right: -150px;
+  transform: rotate(180deg);
+}
+
+.value-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  height: 100%;
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="35" fill="none" stroke="%23B75D4F" stroke-width="2" stroke-opacity="0.3" /><circle cx="50" cy="50" r="20" fill="none" stroke="%23B75D4F" stroke-width="1" stroke-opacity="0.3" /></svg>');
+  background-size: contain;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.value-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background-color: var(--bg-light);
+  border-radius: 50%;
+}
+
+.value-icon i {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.value-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* ====================
+   PRODUCTS SECTION
+==================== */
+.products-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.products-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100"><path fill="%23F6F1EC" fill-opacity="0.3" d="M0,32L80,42.7C160,53,320,75,480,69.3C640,64,800,32,960,21.3C1120,11,1280,21,1360,26.7L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  height: 100%;
+  position: relative;
+}
+
+.product-card::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%23A7B5A0" stroke-width="2" stroke-opacity="0.3" stroke-dasharray="5,5" /></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  transition: var(--transition);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(183, 93, 79, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+.product-tag {
+  background-color: white;
+  color: var(--primary);
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(5px);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-tag {
+  transform: translateY(0);
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.product-info p {
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+/* ====================
+   CONTACT SECTION
+==================== */
+.contact-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,50 Q30,30 50,50 Q70,70 90,50" fill="none" stroke="%23FFFDF9" stroke-width="2" stroke-dasharray="5,5" /></svg>');
+  background-size: 200px;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-item i {
+  width: 40px;
+  height: 40px;
+  background-color: var(--bg-light);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  background-color: var(--bg-light);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: var(--transition);
+}
+
+.social-link:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-5px);
+}
+
+.contact-form {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 80px;
+  height: 80px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,30 Q50,10 70,30 Q90,50 70,70 Q50,90 30,70 Q10,50 30,30 Z" fill="none" stroke="%23B75D4F" stroke-width="3" stroke-opacity="0.2" /></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.form-control::placeholder {
+  color: var(--text-light);
+  opacity: 0.6;
+}
+
+/* Custom select styling */
+.form-control {
+  border: 1px solid rgba(74, 63, 53, 0.2);
+  transition: var(--transition);
+  background-color: rgba(255, 253, 249, 0.7);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(183, 93, 79, 0.15);
+  background-color: white;
+}
+
+.contact-form textarea.form-control {
+  min-height: 100px;
+}
+
+.contact-form select.form-control {
+  height: auto;
+  padding: 0.8rem 1.2rem;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%234A3F35' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+/* ====================
+   FOOTER
+==================== */
+.footer {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--accent-gold) 15%, 
+    transparent 30%, 
+    var(--accent-gold) 45%, 
+    transparent 60%, 
+    var(--accent-gold) 75%, 
+    transparent 90%);
+  background-size: 200% 100%;
+  animation: threadStitch 15s linear infinite;
+}
+
+@keyframes threadStitch {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.footer-link {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-link:hover {
+  color: var(--primary);
+}
+
+.footer-logo {
+  max-height: 35px;
+}
+
+@media (max-width: 767px) {
+  .footer .col-md-6.text-md-start {
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+}
+
+/* Botão "Back to Top" - Correção específica */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 5px 15px rgba(183, 93, 79, 0.3);
+  transition: var(--transition);
+  z-index: 99;
+  border: none;
+}
+
+.back-to-top-btn.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top-btn:hover,
+.back-to-top-btn:focus,
+.back-to-top-btn:active {
+  background-color: var(--primary-dark) !important;
+  color: white !important;
+  transform: translateY(-5px);
+  border: none;
+  outline: none;
+  box-shadow: 0 7px 15px rgba(183, 93, 79, 0.4);
+}
+
+/* ====================
+   RESPONSIVE STYLES
+==================== */
+@media (max-width: 991px) {
+  section {
+    padding: 4rem 0;
+  }
+  
+  .hero {
+    padding: 5rem 0 0;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-image-container::before {
+    display: none;
+  }
+  
+  .feature-item {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  section {
+    padding: 3rem 0;
+  }
+  
+  .hero {
+    padding: 4rem 0 0;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .value-card, 
+  .product-card {
+    margin-bottom: 2rem;
+  }
+  
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .floating-badge {
+    display: none;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .back-to-top-btn {
+    right: 20px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Developer credit */
+.developer-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.developer-link:hover {
+  color: var(--primary);
+}
+
+.developer-logo {
+  max-height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.developer-link:hover .developer-logo {
+  transform: translateY(-3px);
+}
+
+.texture-element-1 {
+  top: 10%;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,30 C10,40 10,60 30,70 C50,80 70,60 70,40 C70,20 50,20 30,30" fill="none" stroke="%23B75D4F" stroke-width="2" /></svg>');
+  transform: rotate(-15deg);
+}
+
+.texture-element-2 {
+  bottom: 15%;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="%23A7B5A0" stroke-width="1" /><circle cx="50" cy="50" r="20" fill="none" stroke="%23A7B5A0" stroke-width="1" /><circle cx="50" cy="50" r="10" fill="none" stroke="%23A7B5A0" stroke-width="1" /></svg>');
+}
