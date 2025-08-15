@@ -236,6 +236,11 @@ section {
   transition: var(--transition);
 }
 
+.logo-img-2 {
+  max-height: 120px;
+  transition: var(--transition);
+}
+
 .navbar.scrolled .logo-img {
   max-height: 40px;
 }
